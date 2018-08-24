@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
+import com.google.android.gms.vision.MultiProcessor;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 
@@ -62,8 +63,6 @@ public class BarcodeScannerActivity extends AppCompatActivity {
                 .build();
 
         //setupButtons();
-
-
         surfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
 
             @Override
@@ -89,6 +88,8 @@ public class BarcodeScannerActivity extends AppCompatActivity {
                 cameraSource.stop();
             }
         });
+
+
         barcodeDetector.setProcessor(new Detector.Processor<Barcode>()
         {
             @Override
@@ -101,6 +102,7 @@ public class BarcodeScannerActivity extends AppCompatActivity {
                 tvBarcodeScanResult.setText("Success!");
             }
         });
+
     }
 
     @Override

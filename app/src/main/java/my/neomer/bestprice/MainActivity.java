@@ -21,34 +21,52 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Toolbar toolbar;
+    private Button btnBarcode;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        findElements();
+
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Snackbar.make(view, getString(R.string.floating_add_price), Snackbar.LENGTH_LONG)
+                        .setAction(null, new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                openAddPriceActivity();
+                            }
+                        }).show();
             }
         });
 
-        Button btnBarcode = (Button) findViewById(R.id.btnBarcode);
         btnBarcode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openBatcodeScanner();
+                openBarcodeScannerActivity();
             }
         });
 
 
     }
 
-    private void openBatcodeScanner() {
+    private void findElements() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        btnBarcode = (Button) findViewById(R.id.btnBarcode);
+    }
+
+    private void openAddPriceActivity() {
+        startActivity(new Intent(this, BarcodeScannerActivity.class));
+    }
+
+
+    private void openBarcodeScannerActivity() {
         startActivity(new Intent(this, BarcodeScannerActivity.class));
     }
 

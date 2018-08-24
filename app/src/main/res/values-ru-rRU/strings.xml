@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Application menu -->
+    <string name="action_settings">Настройки</string>
+
+    <!-- Floating actions -->
+    <string name="floating_add_price">Добавить цену товара</string>
+    <string name="floating_scan_barcode">Отсканировать шрихкод</string>
+
+    <!-- Barcode -->
+    <string name="barcode_title">Штрихкод</string>
+</resources>

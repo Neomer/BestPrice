@@ -1,4 +1,12 @@
 <resources>
-    <string name="app_name">BestPrice</string>
+    <string name="app_name" translatable="false">BestPrice</string>
+    <!-- Application menu -->
     <string name="action_settings">Settings</string>
+
+    <!-- Floating actions -->
+    <string name="floating_add_price">Add price</string>
+    <string name="floating_scan_barcode">Scan barcode</string>
+
+    <!-- Barcode -->
+    <string name="barcode_title">Barcode</string>
 </resources>
