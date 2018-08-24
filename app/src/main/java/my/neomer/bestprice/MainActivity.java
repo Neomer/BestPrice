@@ -42,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(View v) {
                                 openAddPriceActivity();
                             }
-                        }).show();
+                        })
+                        .setActionTextColor(ContextCompat.getColor(getApplicationContext(), R.color.snackbarAction))
+                        .show();
             }
         });
 
